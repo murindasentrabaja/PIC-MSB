@@ -269,7 +269,7 @@ async function repPDF(){
  const pg=doc.getNumberOfPages();for(let i=1;i<=pg;i++){doc.setPage(i);doc.setFont('helvetica','normal').setFontSize(8).setTextColor(100,116,139).text('PT Murinda Sentra Baja  -  Dokumen internal',M,H-7).text(`Halaman ${i} dari ${pg}`,W-M,H-7,{align:'right'})}
  doc.save('Laporan-Tracking-Produksi-'+DF.format(new Date())+'.pdf')}
 function repSheet(){const d=repData(RP.scope);
- $('#sh').innerHTML=`<div class="grab"></div><div class="sh1"><div><b>Laporan Tracking Produksi</b><br><span>Format A4 landscape · logo, ringkasan, tanda tangan</span></div><button class="gb" style="background:#E2E8F0;color:var(--tx)" id="x" aria-label="Tutup">${ic('x')}</button></div>
+ $('#sh').innerHTML=`<div class="grab"></div><div class="sh1"><div><b>Laporan Tracking Produksi</b><br><span>Dari Manual ke Digital, Dari Lambar ke Cepat</span></div><button class="gb" style="background:#E2E8F0;color:var(--tx)" id="x" aria-label="Tutup">${ic('x')}</button></div>
  <div class="chips" style="flex-wrap:wrap;margin:0 0 10px"><button class="chip${RP.scope==='view'?' on':''}" data-rs="view">Sesuai filter tampilan</button><button class="chip${RP.scope==='all'?' on':''}" data-rs="all">Semua unit</button></div>
  <div style="font-size:12px;color:var(--mu);margin-bottom:6px">${esc(d.sub)}</div><div class="info">${d.k.map(([l,v])=>`<div><span>${l}</span><b>${v}</b></div>`).join('')}</div>
  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px"><button class="btn" id="rpdf">${ic('file')}Export PDF</button><button class="btn g" id="rprt">${ic('print')}Cetak</button></div>`;$('#ov').hidden=false}
